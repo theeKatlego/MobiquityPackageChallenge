@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobiquityPackageChallenge.Domain.Models
 {
-    internal class Item
+    public class Item
     {
         public int Index { get; private set; }
         public double Weight { get; private set; }
