@@ -10,6 +10,7 @@ using MediatR.Pipeline;
 using Microsoft.Extensions.DependencyInjection;
 using MobiquityPackageChallenge.Application.Packer;
 using MobiquityPackageChallenge.Infrastructure;
+using MobiquityPackageChallenge.Infrastructure.Logging;
 
 namespace MaxDrive.Infrastructure.DependencyInjection
 {
@@ -20,6 +21,7 @@ namespace MaxDrive.Infrastructure.DependencyInjection
             services.AddValidatorsFromAssembly(applicationAssembly);
             services.AddMediatR(applicationAssembly);
 
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingPipelineStep<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
