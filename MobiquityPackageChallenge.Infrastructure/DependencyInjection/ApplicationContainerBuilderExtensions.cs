@@ -9,10 +9,9 @@ using MediatR;
 using MediatR.Pipeline;
 using Microsoft.Extensions.DependencyInjection;
 using MobiquityPackageChallenge.Application.Packer;
-using MobiquityPackageChallenge.Infrastructure;
 using MobiquityPackageChallenge.Infrastructure.Logging;
 
-namespace MaxDrive.Infrastructure.DependencyInjection
+namespace MobiquityPackageChallenge.Infrastructure.DependencyInjection
 {
     public static class ApplicationContainerBuilderExtensions
     {
