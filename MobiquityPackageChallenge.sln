@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiquityPackageChallenge.Domain", "MobiquityPackageChallenge.Domain\MobiquityPackageChallenge.Domain.csproj", "{DAC3D6B4-AFE7-464A-9BB1-F5B6F8C26A3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobiquityPackageChallenge.Domain", "MobiquityPackageChallenge.Domain\MobiquityPackageChallenge.Domain.csproj", "{DAC3D6B4-AFE7-464A-9BB1-F5B6F8C26A3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiquityPackageChallenge.Application", "MobiquityPackageChallenge.Application\MobiquityPackageChallenge.Application.csproj", "{B8D47918-3ED1-4162-8606-90E8CF6A2AB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobiquityPackageChallenge.Application", "MobiquityPackageChallenge.Application\MobiquityPackageChallenge.Application.csproj", "{B8D47918-3ED1-4162-8606-90E8CF6A2AB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{725CF836-09BD-4348-AA04-418C6B06406B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiquityPackageChallenge.Infrastructure", "MobiquityPackageChallenge.Infrastructure\MobiquityPackageChallenge.Infrastructure.csproj", "{4D2B609C-0279-4260-AE89-A30A9EC60FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{B8D47918-3ED1-4162-8606-90E8CF6A2AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D47918-3ED1-4162-8606-90E8CF6A2AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D47918-3ED1-4162-8606-90E8CF6A2AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2B609C-0279-4260-AE89-A30A9EC60FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2B609C-0279-4260-AE89-A30A9EC60FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2B609C-0279-4260-AE89-A30A9EC60FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2B609C-0279-4260-AE89-A30A9EC60FB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4D2B609C-0279-4260-AE89-A30A9EC60FB0} = {725CF836-09BD-4348-AA04-418C6B06406B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {698FC2C8-D7D2-40DE-B3BF-9D89F4CD253C}
