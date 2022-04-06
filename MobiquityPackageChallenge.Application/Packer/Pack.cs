@@ -11,7 +11,12 @@ namespace MobiquityPackageChallenge.Application.Packer
 {
     public class PackCommand: IRequest<string>
     {
-        public byte[] File { get; set; }
+        public PackCommand(byte[] file)
+        {
+            File = file;
+        }
+
+        public byte[] File { get; private set; }
     }
 
     public class PackValidator : AbstractValidator<PackCommand>

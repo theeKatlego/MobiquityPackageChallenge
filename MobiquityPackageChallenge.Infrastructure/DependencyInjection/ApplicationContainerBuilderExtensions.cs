@@ -17,18 +17,15 @@ namespace MobiquityPackageChallenge.Infrastructure.DependencyInjection
     {
         public static void AddApplication(this IServiceCollection services, Assembly applicationAssembly)
         {
+            services.AddAutoMapper(applicationAssembly);
             services.AddValidatorsFromAssembly(applicationAssembly);
             services.AddMediatR(applicationAssembly);
-
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingPipelineStep<,>));
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
+            
             AddApplicationServices(services);
         }
         private static void AddApplicationServices(this IServiceCollection services)
         {
-            services.AddScoped<IExtractor, Extractor>();
+            services.AddTransient<IExtractor, Extractor>();
         }
     }
 }

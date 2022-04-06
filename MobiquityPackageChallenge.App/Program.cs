@@ -28,7 +28,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         })
     .ConfigureServices(services =>
     {
-        services.AddApplication(typeof(PackCommand).Assembly);
+        services.AddApplication(typeof(PackHandler).Assembly);
         services.AddInfrastructure();
         
         services.AddHostedService<Worker>();
