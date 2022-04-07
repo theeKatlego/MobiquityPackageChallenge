@@ -10,9 +10,9 @@ namespace MobiquityPackageChallenge.Domain.Models
     {
         public int Index { get; private set; }
         public double Weight { get; private set; }
-        public double Cost { get; private set; }
+        public Cost Cost { get; private set; }
 
-        public Item(int index, double weight, double cost)
+        public Item(int index, double weight, Cost cost)
         {
             Index = index;
             Weight = weight;
