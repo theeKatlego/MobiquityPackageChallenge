@@ -55,7 +55,7 @@ namespace MobiquityPackageChallenge.Application.Packer
         {
             var dtos = _Extractor.Extract(request.File);
 
-            var packages = dtos.Select(dto => Pack(dto)).ToList();
+            var packages = dtos.Select(dto => Pack(dto, new List<ItemDto>())).ToList();
 
             var result = new StringBuilder();
 
@@ -70,14 +70,39 @@ namespace MobiquityPackageChallenge.Application.Packer
                     var itemsIndices = package.Items.Select(i => i.Index).ToList();
                     result.Append(string.Join(',', itemsIndices));
                 }
+
+                result.Append("\n");
             }
 
             return Task.FromResult(result.ToString());
         }
 
-        private Package Pack(PackageDto dto)
+        //TODO: implement Knapsack
+        private Package Pack(PackageDto dto, List<ItemDto> packedItems)
         {
-            throw new NotImplementedException();
+            var capacity = dto.WeightLimit - packedItems.Sum(x => x.Weight);
+            
+            var items = dto.Items.Except(packedItems)
+                .Where(x => x.Weight <= capacity)
+                .OrderByDescending(x => x.Cost.Amount)
+                .ThenBy(x => x.Weight)
+                .ToList();
+
+            if (!items.Any())
+                return new Package(
+                    dto.WeightLimit,
+                    packedItems.Select(x => new Item(x.Index, x.Weight, new Cost(x.Cost.CurrencySymbol, x.Cost.Amount)))
+                );
+
+            if (items.Sum(x => x.Weight) <= dto.WeightLimit)
+                return new Package(
+                    dto.WeightLimit,
+                    items.Select(x => new Item(x.Index, x.Weight, new Cost(x.Cost.CurrencySymbol, x.Cost.Amount)))
+                );
+            
+            packedItems.Add(items.First());
+
+            return Pack(dto, packedItems);
         }
     } 
 }
