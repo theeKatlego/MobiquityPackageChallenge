@@ -31,3 +31,21 @@ Additional constraints:
 1. Max weight that a package can take is ≤ 100
 2. There might be up to 15 items you need to choose from
 3. Max weight and cost of an item is ≤ 100
+
+# Feedback from Mobiquity
+```I regret to inform you that our team has reviewed your technical assignment, but unfortunately, your solution didn't meet the expectations of the team, and therefore, we cannot proceed with your application.
+ 
+Feedback after review:
+What was good:
+·  Multi-layer project structure.
+
+What could be improved (Major):
+
+·  Algorithm is not implemented
+
+·  Almost no test cases
+
+·  Solution is Web Application, not a library
+
+·  Solution is overengineered
+
